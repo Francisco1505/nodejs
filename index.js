@@ -12,8 +12,9 @@ const morgan = require('morgan');
 //Settings
 app.set('appName', 'Mi primer server');
 app.set('views', __dirname + '/views');
-// console.log(__dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/css'));
+app.use(express.static(__dirname + '/js'));
 
 // MIDDLEWARE
 app.use(morgan('dev'));
